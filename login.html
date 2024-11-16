@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxqNoe25x5aNDv1Pr16tXkOP-exx6zkqJPxHkaLNmL_TMuxkujEG-NCTIo2c4siPvryfE&usqp=CAU" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh_Mod.btm Login page</title>
+</head>
+<style>
+    /* styles.css */
+    body {
+            background: linear-gradient(135deg, #000000, #00ff00, #030303);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+ /* Keyframes for gradient animation */
+ @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+ }
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h2 {
+            margin-bottom: 30px;
+            color: #333;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 15px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #0072ff;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            background-color: #0072ff;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #005bb5;
+        }
+
+        p {
+            margin-top: 20px;
+            color: #555;
+        }
+
+        a {
+            text-decoration: none;
+            color: #0072ff;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #005bb5;
+        }
+
+        #message {
+            margin-top: 20px;
+            color: #0072ff;
+            font-size: 14px;
+        }
+</style>
+
+<body>
+    <div class="container">
+        <div class="login-form">
+            <h2>Login</h2>
+            <form id="login-form">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="signup.html">Signup here</a>.</p>
+        </div>
+    </div>
+  <script>
+    // script.js
+// login.js
+document.getElementById('login-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Get input values
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+
+    // Check if username exists in localStorage and password matches
+    if (localStorage.getItem(username) === password) {
+        alert("Login successful!");
+        // Redirect to dashboard or any other page upon successful login
+        window.location.href = "veg.html";
+    } else {
+        alert("Invalid username or password.");
+    }
+});
+
+  </script>
+  
+</body>
+</html>

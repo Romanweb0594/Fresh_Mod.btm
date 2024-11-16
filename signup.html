@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxqNoe25x5aNDv1Pr16tXkOP-exx6zkqJPxHkaLNmL_TMuxkujEG-NCTIo2c4siPvryfE&usqp=CAU" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh_Mod.btm Signup Page</title>
+    <style>
+        /* styles.css */
+        body {
+            background: linear-gradient(135deg, #00e1ff, #000000, #ff0303);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+ /* Keyframes for gradient animation */
+ @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+ }
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h2 {
+            margin-bottom: 30px;
+            color: #333;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 15px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #0072ff;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            background-color: #0072ff;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #005bb5;
+        }
+
+        p {
+            margin-top: 20px;
+            color: #555;
+        }
+
+        a {
+            text-decoration: none;
+            color: #0072ff;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #005bb5;
+        }
+
+        #message {
+            margin-top: 20px;
+            color: #0072ff;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body oncontextmenu="return">
+    <div class="container">
+        <h2>Create an Account</h2>
+        <form id="signup-form">
+            <input type="text" id="username" placeholder="Enter Username" required>
+            <input type="password" id="password" placeholder="Enter Password" required>
+            <button type="submit">Signup</button>
+        </form>
+        <p>Already have an account? <a href="login.html">Login here</a>.</p>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        // signup.js
+        document.getElementById('signup-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Get input values
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Check if username already exists in localStorage
+            if (localStorage.getItem(username)) {
+                alert("Username already exists. Please choose a different username.");
+            } else {
+                // Store username and password in localStorage
+                localStorage.setItem(username, password);
+                alert("Signup successful!");
+
+                // Redirect to login page
+                window.location.href = "login.html";
+            }
+        });
+    </script>
+</body>
+</html>

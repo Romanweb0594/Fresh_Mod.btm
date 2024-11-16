@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxqNoe25x5aNDv1Pr16tXkOP-exx6zkqJPxHkaLNmL_TMuxkujEG-NCTIo2c4siPvryfE&usqp=CAU" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh_Mod.btm </title>
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            
+        }
+
+        /* Navbar styling */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: #222;
+            padding: 15px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            position: relative;
+            margin: 0 20px;
+        }
+
+        /* Link styling */
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 5px 0;
+            position: relative;
+            display: inline-block;
+            transition: color 0.4s ease;
+        }
+
+        /* Hover effect */
+        nav ul li a:hover {
+            color: #ff6347;
+        }
+
+        /* Animated slide effect */
+        nav ul li a::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: #ff6347;
+            bottom: 0;
+            left: 0;
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+            transform-origin: left;
+        }
+
+        nav ul li a:hover::before {
+            transform: scaleX(1);
+        }
+
+        /* Content styling */
+        .content {
+            padding: 80px;
+            text-align: center;
+            background: linear-gradient(to right, #07dee6, #f39c12, #8e44ad); /* Multi-color background */
+            animation: gradientAnimation 5s ease infinite;
+        }
+
+        /* Keyframe Animations */
+        @keyframes gradientAnimation {
+            0% { background: linear-gradient(to right, #ff9f9f, #f39c12, #a14bc5); }
+            50% { background: linear-gradient(to right, #2ecc71, #09dbdb, #9fd312); }
+            100% { background: linear-gradient(to right, #41b641, #f39c12, #0a36fd); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes colorShift {
+            0% { color: #ff6347; }
+            100% { color: #f39c12; }
+        }
+
+        .content h1 {
+            font-size: 3em;
+            color: #ffffff;
+        }
+
+        .content p {
+            color: #ff0000;
+            font-size: 1.2em;
+            line-height: 1.6em;
+            margin-top: 20px;
+            border-radius: 30px;
+            background-color: rgb(255, 255, 255);
+        
+        }
+        
+        .logout a {
+            text-decoration: none;
+            color: #fff;
+            padding: 8px 15px;
+            background-color: #222;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+
+        .logout a:hover {
+            background-color: #ff0000;
+            color: #020202;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .text {
+            position: absolute;
+            top: 25px;
+            left: 60px;
+            color: rgb(0, 37, 247);
+            font-size: larger;
+            stroke: rgb(255, 255, 255);
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        /* Custom select container */
+        .custom-select {
+            position: relative;
+            display: inline-block;
+            width: 250px;
+            margin: 0%;
+            padding: 0%;
+        }
+
+        /* Styled select dropdown */
+        .custom-select select {
+            appearance: none;
+            width: 100%;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            background: linear-gradient(135deg, #f53404 0%, #2575fc 100%);
+            color: #fff;
+            font-weight: bold;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        /* Hover effect for the select */
+        .custom-select select:hover {
+            background: linear-gradient(135deg, #5e0dc2 0%, #1b65e5 100%);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Arrow icon styling */
+        .custom-select::after {
+            content: "▼";
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+            font-size: 14px;
+            color: #fff;
+            pointer-events: none;
+        }
+
+        /* Style options list */
+        .custom-select select option {
+            background-color: #fff;
+            color: #333;
+        }
+
+        .ab h1 {
+            color: #ff6347;
+            font-size: 36px;
+            text-align: center;
+            background-color: #000000;
+        }
+
+      
+
+        .ab h2 {
+            color: red;
+            font-size: larger;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .login-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #ff6347;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-button:hover {
+            background-color: #ff4500;
+        }
+
+        pre {
+            font-size: larger;
+            color: white;
+            font-style: italic;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Changes for Vegetable and HUB */
+        .vegetable {
+            background-color: black;
+            color: white;
+            font-weight: bold;
+            border-radius: 20px;
+        }
+
+        .hub {
+            background-color: yellow;
+            color: black;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-weight: bold;
+        }
+        .same-size-images img {
+            width: 400px;  /* Set the width of the image */
+            height: 400px; /* Set the height of the image */
+            object-fit: cover; /* Ensures the image covers the entire area without distortion */
+            margin: 15px;  /* Add some space between images */
+        }
+        .list-container {
+            width: 70%;
+            margin: 40px auto;
+            text-align: center;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .list-title {
+            font-size: 2em;
+            color: #4caf50;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .vegetable-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            list-style: none;
+            padding: 0;
+        }
+
+        .vegetable-item {
+            font-size: 1.4em;
+            color: #2c3e50;
+            margin: 10px 0;
+            padding: 10px 20px;
+            width: 80%;
+            text-align: left;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #e0f7fa, #80deea);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .vegetable-item:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, #b2ebf2, #4dd0e1);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .vegetable-item span {
+            font-weight: bold;
+            color: #00796b;
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Styling the container and text */
+        .notice {
+            font-family: 'Nepali Sangti', sans-serif;
+            background-color: #FFDD57;
+            color: #000;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 10px;
+            animation: slideIn 2s ease-out;
+            width: 80%;
+            margin: 50px auto;
+        }
+
+        .notice span {
+            color: green;
+            font-size: 26px;
+        }
+
+        .learn-more-btn {
+            font-size: 18px;
+            color: white;
+            background-color: #4CAF50; /* Green background */
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        /* Hover effect */
+        .learn-more-btn:hover {
+            background-color: #45a049;
+            transform: scale(1.1);
+        }
+
+        /* Add animation effect */
+        .learn-more-btn {
+            animation: buttonAnimation 2s ease infinite;
+        }
+
+        /* Animation keyframes */
+        @keyframes buttonAnimation {
+            0% {
+                background-color: #4CAF50;
+            }
+            50% {
+                background-color: #3e8e41;
+            }
+            100% {
+                background-color: #4CAF50;
+            }
+        }
+
+        /* Focus effect */
+        .learn-more-btn:focus {
+            outline: none;
+        }
+
+        .button-container {
+    text-align: center;
+}
+
+.buy-now-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    background-color: #ff6347;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(255, 99, 71, 0.5);
+    transition: all 0.3s ease;
+}
+
+.buy-now-btn:hover {
+    background-color: #e5533d;
+    box-shadow: 0 8px 25px rgba(255, 99, 71, 0.7);
+    transform: translateY(-5px);
+}
+
+.buy-now-btn:active {
+    transform: translateY(0);
+    background-color: #d84e31;
+}
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="Veg.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="learn.html">More details</a></li>
+            <div class="logout">
+                <a href="login.html">Log out</a>
+            </div>
+            <div class="logo">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxqNoe25x5aNDv1Pr16tXkOP-exx6zkqJPxHkaLNmL_TMuxkujEG-NCTIo2c4siPvryfE&usqp=CAU" alt="Logo">
+            </div>
+            <div class="text">
+                <pre> Fresh_Mod.btm </pre>
+            </div>
+        </ul>
+    </nav>
+    <hr>
+    <div class="content" id="home">
+        <h1 class="vegetable">Welcome to Veg <span class="hub">HUB</span></h1>
+       
+        <p> तल स्क्रोल गर्नुहोस् र नयाँ र ताजगीपूर्ण सागसब्जीहरू हेर्नुहोस्! (Scroll down to explore new and fresh vegetables!) </p>
+    </div>
+    <hr>
+    <div class="custom-select">
+        <select onchange="window.location.href=this.value;">
+            <option value="none" disabled selected>Select a vegetables category</option>
+            <option value="Veg.html">Veg</option>
+            <option value="Non-Veg.html">Non-Veg</option>
+         
+        </select>
+    </div>
+    <br>
+    <br>
+    <div class="ab">
+      <hr>
+      
+        
+          <div class="same-size-images">
+            <img src="https://welldales.co.uk/wp-content/uploads/2024/08/British-Long-White-Radish-Seeds-UK-Hardy-Fast-Grow-Sprouting-Yearlong-Vegetables-2.jpg" alt="Image 1">
+            <img src="https://static.toiimg.com/thumb/msid-114378075,width-1280,height-720,resizemode-4/114378075.jpg" alt="Image 2">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLQmQCTj35q4fCG9837KlbjSEIdDaNCLt32_6ebEJVX_5lNebuxg5bSGqQkHkP39aohic&usqp=CAU" alt="Image 15">
+            <img src="https://nilagroceries.se/media/catalog/product/cache/4fd20ec0a0f667fe02ced0f72da734ae/b/i/bitter_gourd.jpg" alt="Image 14">
+            <img src="https://api.citi977.com.np/images/images-1703234085881.webp" alt="Image 15">
+            <img src="https://oyopasal.com/wp-content/uploads/2023/06/Rayosag1kg.png" alt="Image 14">
+            <img src="https://www.lovefoodhatewaste.com/sites/default/files/styles/twitter_card_image/public/2022-08/Potatoes-shutterstock-1721688538.jpg.webp?itok=4hLqSjDi" alt="Image 3">
+            <img src="https://images.squarespace-cdn.com/content/v1/603e260dcd5ee7681ca08023/1616079931558-IO3Z0KT2378B6S74ARQ5/unsplash-image-uVPDAwgqLXY.jpg" alt="Image 4">
+            <img src="https://www.hhs1.com/hubfs/carrots%20on%20wood-1.jpg" alt="Image 5">
+            <img src="https://www.awesomecuisine.com/wp-content/uploads/2018/04/bottle_gourd.jpg" alt="Image 6">
+            <img src="https://img.livestrong.com/640/cme-data/getty%2F846db57d5cc546a599c78f9088828dc8.jpg" alt="Image 7">
+            <img src="https://www.ecoponic.in/cdn/shop/files/Broccoli-Free-Download-PNG.png?v=1686824459" alt="Image 8">
+            <img src="https://www.bhg.com/thmb/1_sUQ5rp5ywoFKWiknb_g98uAJA=/4000x0/filters:no_upscale():strip_icc()/BHG-how-to-cook-eggplant-01_4832_6c8w4IN1axe839XzNV1Oq2-671abd5cdcb1411782f960a62a597ff5.jpg" alt="Image 9">
+          <img src="" alt="Image 14">
+        
+        </div>
+            <hr>
+            <div></div>
+    
+    </div>
+
+    <div class="list-container">
+        <div class="list-title">Fresh Vegetable List</div>
+        <ul class="vegetable-list">
+            <div class="vegetable-item"><span>1.</span> मूला</div>
+            <div class="vegetable-item"><span>2.</span> काउली</div>
+            <div class="vegetable-item"><span>3.</span> इसकुस</div>
+            <div class="vegetable-item"><span>4.</span> करेला</div>
+            <div class="vegetable-item"><span>5.</span> फर्सी</div>
+            <div class="vegetable-item"><span>6.</span> रायो साग</div>
+            <div class="vegetable-item"><span>7.</span> आलु</div>
+            <div class="vegetable-item"><span>8.</span> टमाटर</div>
+            <div class="vegetable-item"><span>9.</span> गाजर</div>
+            <div class="vegetable-item"><span>10.</span> लौका</div>
+            <div class="vegetable-item"><span>11.</span> काक्रो </div>
+            <div class="vegetable-item"><span>12.</span> बैंगन </div>
+        </ul>
+        <div class="button-container">
+            <a href="https://forms.gle/Y4zFyXHNkA5drRha8" class="buy-now-btn">Buy Now</a>
+        </div>
+    </div>
+    <div class="notice">
+        तपाईंलाई **हरियो खुर्सानी**, **प्याज**, **लसुन**, **आलु**, **आदुवा** र अन्य सागसब्जीहरू <span>निःशुल्क</span>
+         उपलब्ध छन्। यदि तपाईं वा तपाईंको परिवार घरमा नभएमा वा कुनै समारोहमा जानु भएको अवस्थामा पनि तपाईंको मासिक वा साप्ताहिक योजना मान्य हुनेछ।
+          तपाईंको छुट्टीको दिन जस्तै शनिबारलाई छुट्टै दिनको रूपमा फेरि प्राप्त गर्न सक्नुहुन्छ, तर तपाईंले उक्त दिनको सागसब्जी लिनु पर्नेछ। हामी तपाईंको सन्तुष्टिको लागि सदैव तयार छौं।
+   <br>
+   <br>
+          <button class="learn-more-btn" onclick="window.location.href='contact.html'">
+            थप अध्ययन गर्न यहाँ थिच्नुहोस्
+        </button>
+        </div>
+    
+<script>
+    document.addEventListener("contextmenu", (event) => {
+    event.preventDefault();
+  });
+</script>
+   
+
+</body>
+</html>

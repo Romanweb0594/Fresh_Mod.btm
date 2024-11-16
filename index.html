@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxqNoe25x5aNDv1Pr16tXkOP-exx6zkqJPxHkaLNmL_TMuxkujEG-NCTIo2c4siPvryfE&usqp=CAU" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh_Mod.btm </title>
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+        }
+
+        /* Navbar styling */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: #222;
+            padding: 15px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            position: relative;
+            margin: 0 20px;
+        }
+
+        /* Link styling */
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 5px 0;
+            position: relative;
+            display: inline-block;
+            transition: color 0.4s ease;
+        }
+
+        /* Hover effect */
+        nav ul li a:hover {
+            color: #ff6347;
+        }
+
+        /* Animated slide effect */
+        nav ul li a::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: #ff6347;
+            bottom: 0;
+            left: 0;
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+            transform-origin: left;
+        }
+
+        nav ul li a:hover::before {
+            transform: scaleX(1);
+        }
+
+        /* Content styling */
+        .content {
+            padding: 80px;
+            text-align: center;
+            background: linear-gradient(to right, #ff6347, #f39c12, #8e44ad); /* Multi-color background */
+            animation: gradientAnimation 5s ease infinite;
+        }
+
+        /* Keyframe Animations */
+        @keyframes gradientAnimation {
+            0% { background: linear-gradient(to right, #ff6347, #f39c12, #8e44ad); }
+            50% { background: linear-gradient(to right, #2ecc71, #3498db, #9b59b6); }
+            100% { background: linear-gradient(to right, #ff6347, #f39c12, #8e44ad); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes colorShift {
+            0% { color: #ff6347; }
+            100% { color: #f39c12; }
+        }
+
+        .content h1 {
+            font-size: 3em;
+            color: #ffffff;
+        }
+
+        .content p {
+            color: #ff0000;
+            font-size: 1.2em;
+            line-height: 1.6em;
+            margin-top: 20px;
+            border-radius: 30px;
+            background-color: rgb(255, 255, 255);
+        
+        }
+        
+        .logout a {
+            text-decoration: none;
+            color: #fff;
+            padding: 8px 15px;
+            background-color: #222;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+
+        .logout a:hover {
+            background-color: #ff0000;
+            color: #020202;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .text {
+            position: absolute;
+            top: 25px;
+            left: 60px;
+            color: rgb(0, 37, 247);
+            font-size: larger;
+            stroke: rgb(255, 255, 255);
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        /* Custom select container */
+        .custom-select {
+            position: relative;
+            display: inline-block;
+            width: 250px;
+            margin: 0%;
+            padding: 0%;
+        }
+
+        /* Styled select dropdown */
+        .custom-select select {
+            appearance: none;
+            width: 100%;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: #fff;
+            font-weight: bold;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        /* Hover effect for the select */
+        .custom-select select:hover {
+            background: linear-gradient(135deg, #5e0dc2 0%, #1b65e5 100%);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Arrow icon styling */
+        .custom-select::after {
+            content: "▼";
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+            font-size: 14px;
+            color: #fff;
+            pointer-events: none;
+        }
+
+        /* Style options list */
+        .custom-select select option {
+            background-color: #fff;
+            color: #333;
+        }
+
+        .ab h1 {
+            color: #ff6347;
+            font-size: 36px;
+            text-align: center;
+            background-color: #000000;
+        }
+
+      
+
+        .ab h2 {
+            color: red;
+            font-size: larger;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .login-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #ff6347;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-button:hover {
+            background-color: #ff4500;
+        }
+
+        pre {
+            font-size: larger;
+            color: white;
+            font-style: italic;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Changes for Vegetable and HUB */
+        .vegetable {
+            background-color: black;
+            color: white;
+            font-weight: bold;
+            border-radius: 20px;
+        }
+
+        .hub {
+            background-color: yellow;
+            color: black;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-weight: bold;
+        }
+        .same-size-images img {
+            width: 400px;  /* Set the width of the image */
+            height: 400px; /* Set the height of the image */
+            object-fit: cover; /* Ensures the image covers the entire area without distortion */
+            margin: 15px;  /* Add some space between images */
+        }
+        
+        .supporting-partners {
+    margin-top: 50px;
+}
+
+.partner-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Increased space between images */
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.partner-item {
+    display: inline-block;
+    width: 300px; /* Increased width of the container */
+    height: 200px; /* Increased height of the container */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.partner-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* This keeps the aspect ratio intact */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.partner-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.partner-item:active {
+    transform: scale(0.98);
+}
+/* Container for the pop-up message */
+.message-container {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: white;
+    animation: fadeIn 2s ease-in-out;
+    position: relative;
+}
+
+/* Header style */
+.message h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+/* Paragraph text style */
+.message p {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+/* Button style */
+.message strong {
+    background-color: #ffffff;
+    color: #ff7e5f;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.message strong:hover {
+    transform: scale(1.05);
+}
+
+/* Animation for fading in */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Animation for fading out */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.hidden {
+    animation: fadeOut 1s ease-in-out forwards;
+}
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about2.html">About</a></li>
+            <li><a href="contact2.html">Contact</a></li>
+            <div class="logout">
+                <a href="login.html">Log in</a>
+            </div>
+            <div class="logo">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxqNoe25x5aNDv1Pr16tXkOP-exx6zkqJPxHkaLNmL_TMuxkujEG-NCTIo2c4siPvryfE&usqp=CAU" alt="Logo">
+            </div>
+            <div class="text">
+                <pre> Fresh_Mod.btm </pre>
+            </div>
+        </ul>
+    </nav>
+    
+    <div id="message-container" class="message-container">
+        <div class="message">
+            <h1>Oops!</h1>
+            <p>Your mobile device does not fully support this website's features.</p>
+            <p><strong>For the best experience, please tap the three dots ( ⋮ ) in your browser
+                 and select "Desktop Site ☑".
+                If you have already done this, there’s no need to do it again."</strong></p>
+        </div>
+    </div>
+
+    <hr>
+    <div class="content" id="home">
+        <h1 class="vegetable">Welcome to Fresh_Mod <span class="hub">HUB</span></h1>
+       
+        <p> तल स्क्रोल गर्नुहोस् र नयाँ र ताजगीपूर्ण सागसब्जीहरू हेर्नुहोस्! (Scroll down to explore new and fresh vegetables!) </p>
+    <section class="supporting-partners">
+        <h2>Our Supporting Partners</h2>
+        <div class="partner-container">
+            <a href="https://www.facebook.com/btmjhapa" target="_blank" class="partner-item">
+                <img src="https://scontent.fbir7-1.fna.fbcdn.net/v/t39.30808-6/366664672_598523792461984_2950810990281125162_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGXFXGDOaeg16U8s6sNwpmMdiW8QX0Tnih2JbxBfROeKMLqdiSLI80-X3BHvHgIMVi5c-i3tYLKSlMfr4CkEkOc&_nc_ohc=MJe0ob5ElsgQ7kNvgGiFyQt&_nc_zt=23&_nc_ht=scontent.fbir7-1.fna&_nc_gid=A1FvDqeN3LdMvN70ddQDarG&oh=00_AYBUPaaG0HzBZOA41frD-PuNYpEWILIWymbwAJDoErn6gg&oe=673D4478" alt="Partner 1">
+            </a>
+            <a href="https://www.facebook.com/officialhelpinghands" target="_blank" class="partner-item">
+                <img src="https://scontent.fbir7-1.fna.fbcdn.net/v/t39.30808-6/448338398_845133814340177_1868971685001054827_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEUfpcHk-yIZv84qmY6uEHCMjx5SDUFQagyPHlINQVBqIiiEP_XQUTtKIAmyJ6QAz9SZCPKwPFZQZFM0jEgIhr2&_nc_ohc=AOBFoA7HbtQQ7kNvgFuq6BK&_nc_zt=23&_nc_ht=scontent.fbir7-1.fna&_nc_gid=AmQZkihE9E4RHzrqKmlRwdm&oh=00_AYD2uCY0q078GqJs44w3hg5Tq0Fk6l8GDPRV71HfFMtu-Q&oe=673D2398" alt="Partner 2">
+            </a>
+            <a href="https://www.facebook.com/roman.adhikary" target="_blank" class="partner-item">
+                <img src="https://scontent.fbir7-1.fna.fbcdn.net/v/t39.30808-6/422062528_1105698777223086_6250227903111784183_n.jpg?stp=cp6_dst-jpg&_nc_cat=102&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeG53elDRCHpLHIBoRW3WgtW5IiqHiZmVerkiKoeJmZV6iFPNAKDoxvbAgdKOxa0n_ZQPn7V9rOUC05R25fQ5CNu&_nc_ohc=uHw_J9rzQcoQ7kNvgHqW4c4&_nc_zt=23&_nc_ht=scontent.fbir7-1.fna&_nc_gid=AKaGdPJfrDR7DQjH_mtefCn&oh=00_AYDmYbwjkk5JfYSbznUcnTqQmOgSP7D-NjITVqHC8gj1Fg&oe=673D37AF" alt="Partner 3">
+            </a>
+        </div>
+    </section>
+   <br>
+   <br>
+    <h2>Login to Get More Options</h2>
+    </div>
+    <hr>
+    
+    <div class="custom-select">
+        <select onchange="window.location.href=this.value;">
+            <option value="none" disabled selected>Select a vegetables category</option>
+            <option value="login.html">Veg</option>
+            <option value="login.html">Non-Veg</option>
+     
+        </select>
+    </div>
+    <br>
+    <br>
+    <div class="ab">
+      <hr>
+      <h2>Some vegetables and fruits are currently unavailable due to seasonal factors. If you need any other vegetables or fruits that are not listed, please feel free to contact us.
+        We will make every effort to provide you with vegetables and fruits that are available according to the season.</h2>
+       <hr>
+        <h2> ( यहाँ केहि सागसब्जी र फलफूलहरू मौसमका कारण उपलब्ध छैनन्। यदि तपाईंलाई अन्य कुनै सागसब्जी वा फलफूलको आवश्यकता छ भने, कृपया हामीलाई सम्पर्क गर्नुहोस्।
+        हामी तपाईंलाई सिजन अनुसार उपलब्ध सागसब्जी र फलफूलहरू उपलब्ध गराउने प्रयास गर्नेछौं। ) </h2>
+       <hr>
+        <a href="login.html">
+          <div class="same-size-images">
+            <img src="https://welldales.co.uk/wp-content/uploads/2024/08/British-Long-White-Radish-Seeds-UK-Hardy-Fast-Grow-Sprouting-Yearlong-Vegetables-2.jpg" alt="Image 1">
+            <img src="https://static.toiimg.com/thumb/msid-114378075,width-1280,height-720,resizemode-4/114378075.jpg" alt="Image 2">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLQmQCTj35q4fCG9837KlbjSEIdDaNCLt32_6ebEJVX_5lNebuxg5bSGqQkHkP39aohic&usqp=CAU" alt="Image 15">
+            <img src="https://nilagroceries.se/media/catalog/product/cache/4fd20ec0a0f667fe02ced0f72da734ae/b/i/bitter_gourd.jpg" alt="Image 14">
+            <img src="https://api.citi977.com.np/images/images-1703234085881.webp" alt="Image 15">
+            <img src="https://oyopasal.com/wp-content/uploads/2023/06/Rayosag1kg.png" alt="Image 14">
+            <img src="https://www.lovefoodhatewaste.com/sites/default/files/styles/twitter_card_image/public/2022-08/Potatoes-shutterstock-1721688538.jpg.webp?itok=4hLqSjDi" alt="Image 3">
+            <img src="https://images.squarespace-cdn.com/content/v1/603e260dcd5ee7681ca08023/1616079931558-IO3Z0KT2378B6S74ARQ5/unsplash-image-uVPDAwgqLXY.jpg" alt="Image 4">
+            <img src="https://www.hhs1.com/hubfs/carrots%20on%20wood-1.jpg" alt="Image 5">
+            <img src="https://www.awesomecuisine.com/wp-content/uploads/2018/04/bottle_gourd.jpg" alt="Image 6">
+            <img src="https://img.livestrong.com/640/cme-data/getty%2F846db57d5cc546a599c78f9088828dc8.jpg" alt="Image 7">
+            <img src="https://www.ecoponic.in/cdn/shop/files/Broccoli-Free-Download-PNG.png?v=1686824459" alt="Image 8">
+            <img src="https://www.bhg.com/thmb/1_sUQ5rp5ywoFKWiknb_g98uAJA=/4000x0/filters:no_upscale():strip_icc()/BHG-how-to-cook-eggplant-01_4832_6c8w4IN1axe839XzNV1Oq2-671abd5cdcb1411782f960a62a597ff5.jpg" alt="Image 9">
+            <img src="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2023/2/20/raw-chicken-parts-on-wooden-cutting-board.jpg.rend.hgtvcom.476.317.suffix/1676911060562.jpeg" alt="Image 10">
+            <img src="https://img-global.cpcdn.com/recipes/91ee0fbfc90cbdda/400x400cq70/photo.jpg" alt="Image 11">
+            <img src="https://www.lovepork.co.uk/wp-content/uploads/2023/03/pulled-pork-with-paprika.jpeg" alt="Image 12">
+            <img src="https://t3.ftcdn.net/jpg/02/91/35/16/360_F_291351618_2ggRlHpK6pSwjUNtgMqhdaYliUYA5Jox.jpg" alt="Image 13">
+            <img src="https://fishmart.com.bd/wp-content/uploads/2023/03/3D5B45D6.png" alt="Image 14">
+        
+        </div>
+            <hr>
+            <div></div>
+        </a>
+    </div>
+<script>
+    document.addEventListener("contextmenu", (event) => {
+    event.preventDefault();
+  });
+</script>
+
+<script>
+    // Select the message container
+const messageContainer = document.getElementById("message-container");
+
+// Hide the message after 30 seconds
+setTimeout(() => {
+    messageContainer.classList.add("hidden");
+    // Optionally remove the element from the DOM after the fade-out animation
+    setTimeout(() => {
+        messageContainer.style.display = "none";
+    }, 1500); // Duration of the fade-out animation
+}, 18000); // 30 seconds
+
+</script>
+</body>
+</html>

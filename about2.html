@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxqNoe25x5aNDv1Pr16tXkOP-exx6zkqJPxHkaLNmL_TMuxkujEG-NCTIo2c4siPvryfE&usqp=CAU" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Fresh_Mod.btm</title>
+    <style>
+        /* Reset and Basic Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #8e44ad, #3498db);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        nav {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px 20px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #f39c12;
+        }
+
+        .logo img {
+            height: 40px;
+            transition: transform 0.3s;
+        }
+
+        .logo img:hover {
+            transform: scale(1.1);
+        }
+
+        .about-container {
+            text-align: center;
+            padding: 120px 20px 20px;
+            max-width: 100%;
+            animation: fadeIn 2s ease-in-out;
+            width: 100%;
+        }
+
+        .about-container h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #f39c12;
+            animation: glow 2s infinite alternate;
+        }
+
+        .about-container p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-container strong {
+            color: #f39c12;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #f39c12, 0 0 20px #f39c12;
+            }
+            to {
+                text-shadow: 0 0 20px #f39c12, 0 0 30px #f39c12;
+            }
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 1024px) {
+            .about-container h1 {
+                font-size: 2.2em;
+            }
+
+            .about-container p {
+                font-size: 1.1em;
+                padding: 10px;
+            }
+
+            nav ul {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .logo img {
+                height: 35px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-container h1 {
+                font-size: 2em;
+            }
+
+            .about-container p {
+                font-size: 1em;
+                padding: 10px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .logo img {
+                height: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-container h1 {
+                font-size: 1.8em;
+            }
+
+            .about-container p {
+                font-size: 0.9em;
+            }
+
+            nav {
+                padding: 10px 15px;
+            }
+
+            .logo img {
+                height: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxqNoe25x5aNDv1Pr16tXkOP-exx6zkqJPxHkaLNmL_TMuxkujEG-NCTIo2c4siPvryfE&usqp=CAU" alt="Fresh_Mod Logo">
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about2.html">About</a></li>
+            <li><a href="contact2.html">Contact</a></li>
+           
+        </ul>
+    </nav>
+
+    <div class="about-container">
+        <h1>Welcome to Fresh_Mod.btm</h1>
+        <p>
+            At <strong>Fresh_Mod.btm</strong>, we are committed to delivering fresh, healthy, and organic vegetables straight to your doorstep.
+            With our convenient <strong>monthly</strong> subscription plans, you can enjoy farm-fresh produce without the hassle of going to the market.
+        </p>
+        <p>
+            Our vegetables are carefully selected to ensure top-notch quality, supporting your healthy lifestyle. Whether you're planning meals for the month or stocking up on fresh produce, our flexible subscription options cater to your needs.
+        </p>
+        <p>
+            Experience the ease of having organic produce delivered to you and join our growing community of health-conscious individuals today!
+        </p>
+    </div>
+    <script>
+        document.addEventListener("contextmenu", (event) => {
+          event.preventDefault();
+        });
+      </script>
+</body>
+</html>
